@@ -1,0 +1,18 @@
+- hosts: data1
+  remote_user: root
+
+  tasks:
+  - name: mkdir for install files
+    action: file path={{ data_dir }}/hive/log state=directory mode=0755
+
+  - name: start the hive metastore service
+    shell: nohup {{ service_dir }}/apache-hive-{{ hive_version }}-bin/bin/hive --service metastore > {{ data_dir }}/hive/log/metastore.log 2>&1 &
+    environment:
+      HADOOP_HOME: "{{ service_dir }}/hadoop-{{ hadoop_version }}"
+
+  - name: start the hive server2 service
+    shell: nohup {{ service_dir }}/apache-hive-{{ hive_version }}-bin/bin/hive --service hiveserver2 > {{ data_dir }}/hive/log/hiveserver2.log 2>&1 &
+    environment:
+      HADOOP_HOME: "{{ service_dir }}/hadoop-{{ hadoop_version }}"
+
+

@@ -1,0 +1,14 @@
+- hosts: cluster
+  remote_user: root
+
+  tasks:
+  - name: stop the spark slaves
+    action: command {{ service_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}/sbin/stop-slave.sh
+
+- hosts: data1
+  remote_user: root
+
+  tasks:
+  - name: stop the spark master
+    action: command {{ service_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}/sbin/stop-master.sh
+

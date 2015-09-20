@@ -1,0 +1,16 @@
+- hosts: cluster
+  remote_user: root
+
+  tasks:
+  - name: mkdir for install files
+    action: file path={{ source_dir }} state=directory mode=0755
+
+  - name: copy hadoop install file
+    action: copy src=./install-files/hadoop-{{ hadoop_version }}.tar.gz dest={{ source_dir }}/hadoop-{{ hadoop_version }}.tar.gz owner=root mode=0644
+
+  - name: copy hive install file
+    action: copy src=./install-files/apache-hive-{{ hive_version }}-bin.tar.gz dest={{ source_dir }}/apache-hive-{{ hive_version }}-bin.tar.gz owner=root mode=0644
+
+  - name: copy spark install file
+    action: copy src=./install-files/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}.tgz dest={{ source_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}.tgz owner=root mode=0644
+
