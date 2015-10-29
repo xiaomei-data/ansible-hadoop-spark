@@ -2,7 +2,7 @@
   remote_user: root
 
   tasks:
-  - name: mkdir for install files
+  - name: mkdir for log files
     action: file path={{ data_dir }}/hive/log state=directory mode=0755
 
   - name: start the hive metastore service

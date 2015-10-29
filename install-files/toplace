@@ -1,6 +1,0 @@
-total 1095312
--rw-r--r--  1 admin  staff   80288778  9 21 01:29 apache-hive-0.14.0-bin.tar.gz
--rw-r--r--  1 admin  staff  195257604  9 21 01:29 hadoop-2.6.0.tar.gz
--rw-r--r--  1 admin  staff    3529330  9 21 01:29 mondrian.jar
--rw-r--r--  1 admin  staff     846263  9 21 01:29 mysql-connector-java-5.1.24.jar
--rw-r--r--  1 admin  staff  280869269  9 21 01:29 spark-1.5.0-bin-hadoop2.6.tgz

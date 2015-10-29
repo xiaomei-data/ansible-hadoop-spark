@@ -26,4 +26,4 @@
     template: src=templates/hive-site.j2 dest={{ service_dir }}/apache-hive-{{ hive_version }}-bin/conf/hive-site.xml owner=root mode=0644
 
   - name: put mysql driver into hive classpath
-    action: copy src=./install-files/mysql-connector-java-5.1.24.jar dest={{ service_dir }}/apache-hive-{{ hive_version }}-bin/lib/mysql-connector-java-5.1.24.jar owner=root mode=0644
+    action: copy src=./lib-files/mysql-connector-java-5.1.24.jar dest={{ service_dir }}/apache-hive-{{ hive_version }}-bin/lib/mysql-connector-java-5.1.24.jar owner=root mode=0644
