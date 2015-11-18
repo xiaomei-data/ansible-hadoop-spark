@@ -31,14 +31,14 @@
   - name: copy lib files to support mongo-hadoop bson-3.0.4.jar
     action: copy src=./lib-files/bson-3.0.4.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/lib/bson-3.0.4.jar owner=root mode=0644
 
-  - name: copy lib files to support mongo-hadoop mongo-hadoop-hive-1.4.0.jar
-    action: copy src=./lib-files/mongo-hadoop-hive-1.4.0.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/lib/mongo-hadoop-hive-1.4.0.jar owner=root mode=0644
+  - name: copy lib files to support mongo-hadoop mongo-hadoop-hive-1.5.0-SNAPSHOT.jar
+    action: copy src=./lib-files/mongo-hadoop-hive-1.5.0-SNAPSHOT.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/lib/mongo-hadoop-hive-1.5.0-SNAPSHOT.jar owner=root mode=0644
 
   - name: copy lib files to support mongo-hadoop mongodb-driver-3.0.4.jar
     action: copy src=./lib-files/mongodb-driver-3.0.4.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/lib/mongodb-driver-3.0.4.jar owner=root mode=0644
 
-  - name: copy lib files to support mongo-hadoop mongo-hadoop-core-1.4.0.jar
-    action: copy src=./lib-files/mongo-hadoop-core-1.4.0.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/lib/mongo-hadoop-core-1.4.0.jar owner=root mode=0644
+  - name: copy lib files to support mongo-hadoop mongo-hadoop-core-1.5.0-SNAPSHOT.jar
+    action: copy src=./lib-files/mongo-hadoop-core-1.5.0-SNAPSHOT.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/lib/mongo-hadoop-core-1.5.0-SNAPSHOT.jar owner=root mode=0644
 
   - name: copy lib files to support mongo-hadoop mongo-java-driver-3.0.4.jar
     action: copy src=./lib-files/mongo-java-driver-3.0.4.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/lib/mongo-java-driver-3.0.4.jar owner=root mode=0644
