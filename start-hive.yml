@@ -14,5 +14,3 @@
     shell: nohup {{ service_dir }}/apache-hive-{{ hive_version }}-bin/bin/hive --service hiveserver2 > {{ data_dir }}/hive/log/hiveserver2.log 2>&1 &
     environment:
       HADOOP_HOME: "{{ service_dir }}/hadoop-{{ hadoop_version }}"
-
-

@@ -2,7 +2,7 @@ source_dir: /root/install-files
 service_dir: /opt
 data_dir: /data
 hadoop_version: 2.6.0
-hive_version: 0.14.0
+hive_version: 1.2.1
 spark_version: 1.5.0
 spark_hadoop_version: 2.6
 namenode_host: data1

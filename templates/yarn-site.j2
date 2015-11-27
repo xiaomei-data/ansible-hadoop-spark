@@ -23,6 +23,18 @@
       <value>{{ namenode_host }}</value>
   </property>
   <property>
+      <name>yarn.resourcemanager.scheduler.address</name>
+      <value>{{ namenode_host }}:8030</value>
+  </property>
+  <property>
+          <name>yarn.resourcemanager.webapp.address</name>
+          <value>{{ namenode_host }}:8088</value>
+      </property>
+  <property>
+      <name>yarn.web-proxy.address</name>
+      <value>{{ namenode_host }}:8088</value>
+  </property>
+  <property>
       <name>yarn.nodemanager.pmem-check-enabled</name>
       <value>false</value>
   </property>
@@ -46,5 +58,8 @@
     <name>yarn.nodemanager.log-dirs</name>
     <value>{{ data_dir }}/hadoop/log</value>
   </property>
+  <property>
+    <name>yarn.log-aggregation-enable</name>
+    <value>true</value>
+  </property>
 </configuration>
-
