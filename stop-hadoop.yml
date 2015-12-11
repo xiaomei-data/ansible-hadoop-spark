@@ -1,26 +1,26 @@
 - hosts: data1
-  remote_user: bmw
+  remote_user: {{ remote_user }}
 
   tasks:
   - name: stop the hdfs namenode
     action: command {{ service_dir }}/hadoop-{{ hadoop_version }}/sbin/hadoop-daemon.sh --script hdfs stop namenode
 
 - hosts: slave
-  remote_user: bmw
+  remote_user: {{ remote_user }}
 
   tasks:
   - name: stop the hdfs datanodes
     action: command {{ service_dir }}/hadoop-{{ hadoop_version }}/sbin/hadoop-daemon.sh --script hdfs stop datanode
 
 - hosts: data1
-  remote_user: bmw
+  remote_user: {{ remote_user }}
 
   tasks:
   - name: stop the yarn resourcemanager
     action: command {{ service_dir }}/hadoop-{{ hadoop_version }}/sbin/yarn-daemon.sh stop resourcemanager
 
 - hosts: slave
-  remote_user: bmw
+  remote_user: {{ remote_user }}
 
   tasks:
   - name: stop the yarn nodemanagers

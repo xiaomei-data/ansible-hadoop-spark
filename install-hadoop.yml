@@ -1,5 +1,5 @@
 - hosts: cluster
-  remote_user: bmw
+  remote_user: {{ remote_user }}
 
   tasks:
   - name: unzip the hadoop to service directory
@@ -50,7 +50,7 @@
     action: command rm -rf {{ data_dir }}/hadoop
 
 - hosts: data1
-  remote_user: bmw
+  remote_user: {{ remote_user }}
   tasks:
   - name: format the hdfs filesystem
     action: command {{ service_dir }}/hadoop-{{ hadoop_version }}/bin/hdfs namenode -format cluster

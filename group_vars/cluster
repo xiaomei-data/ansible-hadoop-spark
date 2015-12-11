@@ -8,3 +8,4 @@ spark_hadoop_version: 2.6
 namenode_host: data1
 mysql_root_pass: root
 spark_master_host: data1
+remote_user: bmw
