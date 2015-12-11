@@ -1,5 +1,5 @@
 - hosts: cluster
-  remote_user: {{ remote_user }}
+  remote_user: "{{ remote_user }}"
 
   tasks:
   - name: mkdir for install files

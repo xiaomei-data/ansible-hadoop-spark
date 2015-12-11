@@ -1,26 +1,26 @@
 - hosts: data1
-  remote_user: {{ remote_user }}
+  remote_user: "{{ remote_user }}"
 
   tasks:
   - name: start the hdfs namenode
     action: command {{ service_dir }}/hadoop-{{ hadoop_version }}/sbin/hadoop-daemon.sh --script hdfs start namenode
 
 - hosts: slave
-  remote_user: {{ remote_user }}
+  remote_user: "{{ remote_user }}"
 
   tasks:
   - name: start the hdfs datanodes
     action: command {{ service_dir }}/hadoop-{{ hadoop_version }}/sbin/hadoop-daemon.sh --script hdfs start datanode
 
 - hosts: data1
-  remote_user: {{ remote_user }}
+  remote_user: "{{ remote_user }}"
 
   tasks:
   - name: start the yarn resourcemanager
     action: command {{ service_dir }}/hadoop-{{ hadoop_version }}/sbin/yarn-daemon.sh start resourcemanager
 
 - hosts: slave
-  remote_user: {{ remote_user }}
+  remote_user: "{{ remote_user }}"
 
   tasks:
   - name: start the yarn nodemanagers

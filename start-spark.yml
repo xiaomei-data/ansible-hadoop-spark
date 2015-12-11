@@ -1,5 +1,5 @@
 - hosts: data1
-  remote_user: {{ remote_user }}
+  remote_user: "{{ remote_user }}"
 
   tasks:
   - name: start the spark master
@@ -10,7 +10,7 @@
       SPARK_LOCAL_DIRS: "{{ data_dir }}/spark/data"
 
 - hosts: slave
-  remote_user: {{ remote_user }}
+  remote_user: "{{ remote_user }}"
 
   tasks:
   - name: start the spark slaves
