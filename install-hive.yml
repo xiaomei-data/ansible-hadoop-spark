@@ -7,20 +7,20 @@
     environment:
       HIVE_HOME: "{{ service_dir }}/hive-{{ hive_version }}"
 
-  - name: install the mysql package
-    action: yum name=mysql-server.x86_64 state=present
+  # - name: install the mysql package
+  #   action: yum name=mysql-server.x86_64 state=present
+  #
+  # - name: install the mysql-python package
+  #   action: yum name=MySQL-python.x86_64 state=present
 
-  - name: install the mysql-python package
-    action: yum name=MySQL-python.x86_64 state=present
-
-  - name: ensure mysql is running (and enable it at boot)
-    service: name=mysqld state=started enabled=yes
+  # - name: ensure mysql is running (and enable it at boot)
+  #   service: name=mysqld state=started enabled=yes
 
   - name: create database for hive
     mysql_db: name=hive login_user=root login_password={{ mysql_root_pass }} state=present
 
   - name: create user for hive
-    mysql_user: name=hive password=hive login_user=root login_password={{ mysql_root_pass }} priv=hive.*:ALL state=present
+    mysql_user: name=hive password=hive login_user=root login_password={{ mysql_root_pass }} priv=hive.*:w state=present
 
   - name: generate hive-site.xml for hive
     template: src=templates/hive-site.j2 dest={{ service_dir }}/apache-hive-{{ hive_version }}-bin/conf/hive-site.xml owner={{ remote_user }} mode=0644
