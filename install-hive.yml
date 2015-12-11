@@ -1,5 +1,5 @@
 - hosts: data1
-  remote_user: root
+  remote_user: bmw
 
   tasks:
   - name: unzip the hive to service directory
@@ -23,7 +23,7 @@
     mysql_user: name=hive password=hive login_user=root login_password={{ mysql_root_pass }} priv=hive.*:ALL state=present
 
   - name: generate hive-site.xml for hive
-    template: src=templates/hive-site.j2 dest={{ service_dir }}/apache-hive-{{ hive_version }}-bin/conf/hive-site.xml owner=root mode=0644
+    template: src=templates/hive-site.j2 dest={{ service_dir }}/apache-hive-{{ hive_version }}-bin/conf/hive-site.xml owner={{ remote_user }} mode=0644
 
   - name: put mysql driver into hive classpath
-    action: copy src=./lib-files/mysql-connector-java-5.1.24.jar dest={{ service_dir }}/apache-hive-{{ hive_version }}-bin/lib/mysql-connector-java-5.1.24.jar owner=root mode=0644
+    action: copy src=./lib-files/mysql-connector-java-5.1.24.jar dest={{ service_dir }}/apache-hive-{{ hive_version }}-bin/lib/mysql-connector-java-5.1.24.jar owner={{ remote_user }} mode=0644

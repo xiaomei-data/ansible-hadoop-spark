@@ -1,10 +1,9 @@
 - hosts: cluster
-  remote_user: root
+  remote_user: bmw
 
   tasks:
   - name: unzip the spark to service directory
     action: unarchive src={{ source_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}.tgz dest={{ service_dir }} copy=no
 
   - name: generate hive-site.xml for spark
-    template: src=templates/hive-site.j2 dest={{ service_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}/conf/hive-site.xml owner=root mode=0644
-
+    template: src=templates/hive-site.j2 dest={{ service_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}/conf/hive-site.xml owner={{ remote_user }} mode=0644

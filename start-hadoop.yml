@@ -1,17 +1,17 @@
 - hosts: data1
-  remote_user: root
+  remote_user: bmw
 
   tasks:
   - name: start the hdfs namenode
     action: command {{ service_dir }}/hadoop-{{ hadoop_version }}/sbin/hadoop-daemon.sh --script hdfs start namenode
 
-- hosts: cluster
+- hosts: slave
   remote_user: root
 
   tasks:
   - name: start the hdfs datanodes
     action: command {{ service_dir }}/hadoop-{{ hadoop_version }}/sbin/hadoop-daemon.sh --script hdfs start datanode
- 
+
 - hosts: data1
   remote_user: root
 
@@ -19,10 +19,9 @@
   - name: start the yarn resourcemanager
     action: command {{ service_dir }}/hadoop-{{ hadoop_version }}/sbin/yarn-daemon.sh start resourcemanager
 
-- hosts: cluster
+- hosts: slave
   remote_user: root
 
   tasks:
   - name: start the yarn nodemanagers
     action: command {{ service_dir }}/hadoop-{{ hadoop_version }}/sbin/yarn-daemon.sh start nodemanager
-

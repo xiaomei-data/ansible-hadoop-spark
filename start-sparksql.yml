@@ -1,5 +1,5 @@
 - hosts: data1
-  remote_user: root
+  remote_user: bmw
 
   tasks:
   - name: mkdir for hive logs
@@ -16,6 +16,3 @@
       SPARK_LOG_DIR: "{{ data_dir }}/spark/log"
       SPARK_WORKER_DIR: "{{ data_dir }}/spark/work"
       SPARK_LOCAL_DIRS: "{{ data_dir }}/spark/data"
-
-
-

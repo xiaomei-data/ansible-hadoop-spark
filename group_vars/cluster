@@ -1,6 +1,6 @@
-source_dir: /root/install-files
-service_dir: /opt
-data_dir: /data
+source_dir: /home/bmw/install-files
+service_dir: /data/bmw/services
+data_dir: /data/bmw
 hadoop_version: 2.6.0
 hive_version: 1.2.1
 spark_version: 1.5.0

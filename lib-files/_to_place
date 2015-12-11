@@ -5,3 +5,4 @@ mongo-java-driver-3.0.4.jar
 mongodb-driver-3.0.4.jar
 mongodb-driver-core-3.0.4.jar
 mysql-connector-java-5.1.24.jar
+jblas-1.2.4.jar

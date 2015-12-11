@@ -1,5 +1,5 @@
 - hosts: data1
-  remote_user: root
+  remote_user: bmw
 
   tasks:
   - name: start the spark master
@@ -9,8 +9,8 @@
       SPARK_WORKER_DIR: "{{ data_dir }}/spark/work"
       SPARK_LOCAL_DIRS: "{{ data_dir }}/spark/data"
 
-- hosts: cluster
-  remote_user: root
+- hosts: slave
+  remote_user: bmw
 
   tasks:
   - name: start the spark slaves
@@ -19,4 +19,3 @@
       SPARK_LOG_DIR: "{{ data_dir }}/spark/log"
       SPARK_WORKER_DIR: "{{ data_dir }}/spark/work"
       SPARK_LOCAL_DIRS: "{{ data_dir }}/spark/data"
-

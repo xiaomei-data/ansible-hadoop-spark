@@ -1,5 +1,5 @@
 - hosts: data1
-  remote_user: root
+  remote_user: bmw
 
   tasks:
   - name: mkdir for log files
