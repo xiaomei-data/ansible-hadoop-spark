@@ -29,22 +29,22 @@
     template: src=templates/mapred-site.j2 dest={{ service_dir }}/hadoop-{{ hadoop_version }}/etc/hadoop/mapred-site.xml owner={{ remote_user }} mode=0644
 
   - name: copy lib files to support mongo-hadoop bson-3.0.4.jar
-    action: copy src=./lib-files/bson-3.0.4.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/lib/bson-3.0.4.jar owner={{ remote_user }} mode=0644
+    action: copy src=./lib-files/bson-3.0.4.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/share/hadoop/common/lib/bson-3.0.4.jar owner={{ remote_user }} mode=0644
 
   - name: copy lib files to support mongo-hadoop mongo-hadoop-hive-1.5.0-SNAPSHOT.jar
-    action: copy src=./lib-files/mongo-hadoop-hive-1.5.0-SNAPSHOT.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/lib/mongo-hadoop-hive-1.5.0-SNAPSHOT.jar owner={{ remote_user }} mode=0644
+    action: copy src=./lib-files/mongo-hadoop-hive-1.5.0-SNAPSHOT.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/share/hadoop/common/lib/mongo-hadoop-hive-1.5.0-SNAPSHOT.jar owner={{ remote_user }} mode=0644
 
   - name: copy lib files to support mongo-hadoop mongodb-driver-3.0.4.jar
-    action: copy src=./lib-files/mongodb-driver-3.0.4.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/lib/mongodb-driver-3.0.4.jar owner={{ remote_user }} mode=0644
+    action: copy src=./lib-files/mongodb-driver-3.0.4.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/share/hadoop/common/lib/mongodb-driver-3.0.4.jar owner={{ remote_user }} mode=0644
 
   - name: copy lib files to support mongo-hadoop mongo-hadoop-core-1.5.0-SNAPSHOT.jar
-    action: copy src=./lib-files/mongo-hadoop-core-1.5.0-SNAPSHOT.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/lib/mongo-hadoop-core-1.5.0-SNAPSHOT.jar owner={{ remote_user }} mode=0644
+    action: copy src=./lib-files/mongo-hadoop-core-1.5.0-SNAPSHOT.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/share/hadoop/common/lib/mongo-hadoop-core-1.5.0-SNAPSHOT.jar owner={{ remote_user }} mode=0644
 
   - name: copy lib files to support mongo-hadoop mongo-java-driver-3.0.4.jar
-    action: copy src=./lib-files/mongo-java-driver-3.0.4.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/lib/mongo-java-driver-3.0.4.jar owner={{ remote_user }} mode=0644
+    action: copy src=./lib-files/mongo-java-driver-3.0.4.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/share/hadoop/common/lib/mongo-java-driver-3.0.4.jar owner={{ remote_user }} mode=0644
 
   - name: copy lib files to support mongo-hadoop mongodb-driver-core-3.0.4.jar
-    action: copy src=./lib-files/mongodb-driver-core-3.0.4.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/lib/mongodb-driver-core-3.0.4.jar owner={{ remote_user }} mode=0644
+    action: copy src=./lib-files/mongodb-driver-core-3.0.4.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/share/hadoop/common/lib/mongodb-driver-core-3.0.4.jar owner={{ remote_user }} mode=0644
 
   - name: delete hadoop-data directory
     action: command rm -rf {{ data_dir }}/hadoop

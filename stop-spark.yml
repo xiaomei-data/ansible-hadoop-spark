@@ -1,11 +1,11 @@
-- hosts: cluster
+- hosts: salve
   remote_user: "{{ remote_user }}"
 
   tasks:
   - name: stop the spark slaves
     action: command {{ service_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}/sbin/stop-slave.sh
 
-- hosts: slave
+- hosts: data1
   remote_user: "{{ remote_user }}"
 
   tasks:
