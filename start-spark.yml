@@ -5,9 +5,10 @@
   - name: start the spark master
     action: command {{ service_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}/sbin/start-master.sh
     environment:
-      SPARK_LOG_DIR: "{{ data_dir }}/spark/log"
-      SPARK_WORKER_DIR: "{{ data_dir }}/spark/work"
-      SPARK_LOCAL_DIRS: "{{ data_dir }}/spark/data"
+      SPARK_LOG_DIR: "{{ service_dir }}/spark/log"
+      SPARK_WORKER_DIR: "{{ service_dir }}/spark/work"
+      SPARK_LOCAL_DIRS: "{{ service_dir }}/spark/data"
+      HADOOP_HOME: "{{service_dir}}/hadoop"
 
 - hosts: slave
   remote_user: "{{ remote_user }}"
@@ -16,6 +17,7 @@
   - name: start the spark slaves
     action: command {{ service_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}/sbin/start-slave.sh spark://{{ spark_master_host }}:7077
     environment:
-      SPARK_LOG_DIR: "{{ data_dir }}/spark/log"
-      SPARK_WORKER_DIR: "{{ data_dir }}/spark/work"
-      SPARK_LOCAL_DIRS: "{{ data_dir }}/spark/data"
+      SPARK_LOG_DIR: "{{ service_dir }}/spark/log"
+      SPARK_WORKER_DIR: "{{ service_dir }}/spark/work"
+      SPARK_LOCAL_DIRS: "{{ service_dir }}/spark/data"
+      HADOOP_HOME: "{{service_dir}}/hadoop"
