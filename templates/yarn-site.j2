@@ -28,11 +28,11 @@
   </property>
   <property>
           <name>yarn.resourcemanager.webapp.address</name>
-          <value>{{ namenode_host }}:8088</value>
+          <value>{{ master_ip }}:8088</value>
       </property>
   <property>
       <name>yarn.web-proxy.address</name>
-      <value>{{ namenode_host }}:8088</value>
+      <value>{{ master_ip }}:8088</value>
   </property>
   <property>
       <name>yarn.nodemanager.pmem-check-enabled</name>
@@ -62,4 +62,12 @@
     <name>yarn.log-aggregation-enable</name>
     <value>true</value>
   </property>
+  <property>
+   <name>yarn.scheduler.maximum-allocation-mb</name>
+   <value>12288</value>
+ </property>
+<property>
+   <name>yarn.nodemanager.resource.memory-mb</name>
+   <value>12288</value>
+ </property>
 </configuration>

@@ -28,6 +28,12 @@
   - name: generate mapred-site.xml for hadoop
     template: src=templates/mapred-site.j2 dest={{ service_dir }}/hadoop-{{ hadoop_version }}/etc/hadoop/mapred-site.xml owner={{ remote_user }} mode=0644
 
+  - name: generate capacity-scheduler.xml for hadoop
+    template: src=templates/capacity-scheduler.xml dest={{ service_dir }}/hadoop-{{ hadoop_version }}/etc/hadoop/capacity-scheduler.xml owner={{ remote_user }} mode=0644
+
+  - name: generate hive-site.j2 for hadoop
+    template: src=templates/hive-site.j2 dest={{ service_dir }}/hadoop-{{ hadoop_version }}/etc/hadoop/hive-site.xml owner={{ remote_user }} mode=0644
+
   - name: copy lib files to support mongo-hadoop bson-3.0.4.jar
     action: copy src=./lib-files/bson-3.0.4.jar dest={{ service_dir }}/hadoop-{{ hadoop_version }}/share/hadoop/common/lib/bson-3.0.4.jar owner={{ remote_user }} mode=0644
 

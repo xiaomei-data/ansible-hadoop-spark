@@ -9,3 +9,4 @@ namenode_host: data1
 mysql_root_pass: root
 spark_master_host: data1
 remote_user: bmw
+master_ip: 139.129.128.187
