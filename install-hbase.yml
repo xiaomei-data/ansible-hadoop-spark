@@ -1,0 +1,12 @@
+- hosts: cluster
+  remote_user: "{{ remote_user }}"
+
+  tasks:
+  - name: unzip the hbase to service directory
+    action: unarchive src={{ source_dir }}/hbase-{{ hbase_version }}-bin.tar.gz dest={{ service_dir }} copy=no
+
+  - name: generate hadoop-env.sh for hbase
+    template: src=templates/hbase-site.xml dest={{ service_dir }}/hbase-{{ hbase_version }}/conf/hbase-site.xml owner={{ remote_user }} mode=0644
+
+  - name: generate regionservers for hbase
+    template: src=templates/regionservers dest={{ service_dir }}/hbase-{{ hbase_version }}/conf/regionservers owner={{ remote_user }} mode=0644

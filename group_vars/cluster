@@ -5,6 +5,7 @@ hadoop_version: 2.7.1
 hive_version: 1.2.1
 spark_version: 1.6.0
 spark_hadoop_version: 2.7.1
+hbase_version: 1.1.2
 namenode_host: data1
 mysql_root_pass: root
 spark_master_host: data1

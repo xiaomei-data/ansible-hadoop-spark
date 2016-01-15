@@ -100,96 +100,76 @@
   <!-- hive  -->
   <property>
     <name>yarn.scheduler.capacity.root.hive.capacity</name>
-      <value>30</value>
-        <description>Default queue target capacity.</description>
-        </property>
+    <value>30</value>
+    <description>Default queue target capacity.</description>
+  </property>
 
-<property>
-  <name>yarn.scheduler.capacity.root.hive.user-limit-factor</name>
+  <property>
+    <name>yarn.scheduler.capacity.root.hive.user-limit-factor</name>
     <value>1</value>
-      <description>
-          Default queue user limit a percentage from 0.0 to 1.0.
-            </description>
-            </property>
+    <description>Default queue user limit a percentage from 0.0 to 1.0.</description>
+  </property>
 
-<property>
-  <name>yarn.scheduler.capacity.root.hive.maximum-capacity</name>
+  <property>
+    <name>yarn.scheduler.capacity.root.hive.maximum-capacity</name>
     <value>100</value>
-      <description>
-          The maximum capacity of the default queue.
-            </description>
-            </property>
+    <description>The maximum capacity of the default queue.</description>
+  </property>
 
-<property>
-  <name>yarn.scheduler.capacity.root.hive.state</name>
+  <property>
+    <name>yarn.scheduler.capacity.root.hive.state</name>
     <value>RUNNING</value>
-      <description>
-          The state of the default queue. State can be one of RUNNING or STOPPED.
-            </description>
-            </property>
+    <description>The state of the default queue. State can be one of RUNNING or STOPPED.</description>
+  </property>
 
-<property>
-  <name>yarn.scheduler.capacity.root.hive.acl_submit_applications</name>
+  <property>
+    <name>yarn.scheduler.capacity.root.hive.acl_submit_applications</name>
     <value>*</value>
-      <description>
-          The ACL of who can submit jobs to the default queue.
-            </description>
-            </property>
+    <description>The ACL of who can submit jobs to the default queue.</description>
+  </property>
 
-<property>
-  <name>yarn.scheduler.capacity.root.hive.acl_administer_queue</name>
+  <property>
+    <name>yarn.scheduler.capacity.root.hive.acl_administer_queue</name>
     <value>*</value>
-      <description>
-          The ACL of who can administer jobs on the default queue.
-            </description>
-            </property>
+    <description>The ACL of who can administer jobs on the default queue.</description>
+  </property>
 
   <!-- spark -->
   <property>
     <name>yarn.scheduler.capacity.root.spark.capacity</name>
-      <value>30</value>
-        <description>Default queue target capacity.</description>
-        </property>
+    <value>30</value>
+    <description>Default queue target capacity.</description>
+  </property>
 
-<property>
-  <name>yarn.scheduler.capacity.root.spark.user-limit-factor</name>
+  <property>
+    <name>yarn.scheduler.capacity.root.spark.user-limit-factor</name>
     <value>1</value>
-      <description>
-          Default queue user limit a percentage from 0.0 to 1.0.
-            </description>
-            </property>
+    <description>Default queue user limit a percentage from 0.0 to 1.0.</description>
+  </property>
 
-<property>
-  <name>yarn.scheduler.capacity.root.spark.maximum-capacity</name>
+  <property>
+    <name>yarn.scheduler.capacity.root.spark.maximum-capacity</name>
     <value>100</value>
-      <description>
-          The maximum capacity of the default queue.
-            </description>
-            </property>
+    <description>The maximum capacity of the default queue.</description>
+  </property>
 
-<property>
-  <name>yarn.scheduler.capacity.root.spark.state</name>
+  <property>
+    <name>yarn.scheduler.capacity.root.spark.state</name>
     <value>RUNNING</value>
-      <description>
-          The state of the default queue. State can be one of RUNNING or STOPPED.
-            </description>
-            </property>
+    <description>The state of the default queue. State can be one of RUNNING or STOPPED.</description>
+  </property>
 
-<property>
-  <name>yarn.scheduler.capacity.root.spark.acl_submit_applications</name>
+  <property>
+    <name>yarn.scheduler.capacity.root.spark.acl_submit_applications</name>
     <value>*</value>
-      <description>
-          The ACL of who can submit jobs to the default queue.
-            </description>
-            </property>
+    <description>The ACL of who can submit jobs to the default queue.</description>
+  </property>
 
-<property>
-  <name>yarn.scheduler.capacity.root.spark.acl_administer_queue</name>
+  <property>
+    <name>yarn.scheduler.capacity.root.spark.acl_administer_queue</name>
     <value>*</value>
-      <description>
-          The ACL of who can administer jobs on the default queue.
-            </description>
-            </property>
+    <description>The ACL of who can administer jobs on the default queue.</description>
+  </property>
   <!--end-->
   <property>
     <name>yarn.scheduler.capacity.node-locality-delay</name>

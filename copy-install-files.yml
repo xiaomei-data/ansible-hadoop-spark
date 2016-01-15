@@ -13,3 +13,6 @@
 
   - name: copy spark install file
     action: copy src=./install-files/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}.tgz dest={{ source_dir }}/spark-{{ spark_version }}-bin-hadoop{{ spark_hadoop_version }}.tgz owner={{ remote_user }} mode=0644
+
+  - name: copy hbase install file
+    action: copy src=./install-files/hbase-{{ hbase_version }}-bin.tar.gz dest={{ source_dir }}/hbase-{{ hbase_version }}-bin.tar.gz owner={{ remote_user }} mode=0644
