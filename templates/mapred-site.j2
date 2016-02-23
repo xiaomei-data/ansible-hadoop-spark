@@ -75,7 +75,7 @@
     <description>Fraction of the number of maps in the job which should be complete before reduces are scheduled for the job. </description>
   </property>
 <!-- Add LZO Codecs details -->
-<!--    <property>
+   <property>
         <name>mapreduce.map.output.compress</name>
         <value>true</value>
     </property>
@@ -85,6 +85,6 @@
     </property>
     <property>
 	    <name>mapred.child.env</name>
-	    <value>LD_LIBRARY_PATH=/usr/local/hadoop/lib/native</value>
-    </property>-->
+	    <value>LD_LIBRARY_PATH=${{{ service_dir }}/hadoop-{{ hadoop_version }}}/lib</value>
+    </property>
 </configuration>
