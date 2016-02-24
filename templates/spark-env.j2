@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+export SPARK_LIBRARY_PATH=$SPARK_LIBRARY_PATH:{{ service_dir }}/hadoop-{{ hadoop_version }}}/lib/native
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:{{ service_dir }}/hadoop-{{ hadoop_version }}}/lib/native
+export SPARK_CLASSPATH=$SPARK_CLASSPATH:{{ service_dir }}/hadoop-{{ hadoop_version }}}/share/hadoop/common/*:{{ service_dir }}/hadoop-{{ hadoop_version }}}/share/hadoop/common/lib/*:{{ service_dir }}/hadoop-{{ hadoop_version }}}/share/hadoop/hdfs/*:{{ service_dir }}/hadoop-{{ hadoop_version }}}/share/hadoop/hdfs/lib/*:{{ service_dir }}/hadoop-{{ hadoop_version }}}/share/hadoop/yarn/lib/*:{{ service_dir }}/hadoop-{{ hadoop_version }}}/share/hadoop/yarn/*:{{ service_dir }}/hadoop-{{ hadoop_version }}}/share/hadoop/mapreduce/lib/*:{{ service_dir }}/hadoop-{{ hadoop_version }}}/share/hadoop/mapreduce/*:{{ service_dir }}/hadoop-{{ hadoop_version }}}/share/hadoop/tools/lib/*:{{ service_dir }}/hadoop-{{ hadoop_version }}}/share/hadoop/tools/*

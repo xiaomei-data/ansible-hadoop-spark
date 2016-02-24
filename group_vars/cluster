@@ -1,10 +1,9 @@
 source_dir: /home/bmw/install-files
 service_dir: /data/bmw/services
 data_dir: /data/bmw
-hadoop_version: 2.7.1
+hadoop_version: 2.5.2
 hive_version: 1.2.1
-spark_version: 1.6.0
-spark_hadoop_version: 2.7.1
+spark_version: 1.6.0-bin-hadoop2.4
 hbase_version: 0.98.17-hadoop2
 namenode_host: data1
 mysql_root_pass: root
