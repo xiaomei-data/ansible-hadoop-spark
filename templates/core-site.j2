@@ -38,14 +38,14 @@
 		 <name>fs.checkpoint.size</name>
 		 <value>67108864</value>
 	</property> -->
-<!--     <property>
+    <property>
         <name>io.compression.codecs</name>
         <value>org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec</value>
     </property>
     <property>
         <name>io.compression.codec.lzo.class</name>
-        <value>com.hadoop.compression.lzo.LzoCodec</value>
-    </property> -->
+        <value>com.hadoop.compression.lzo.LzopCodec</value>
+    </property>
     <property>
         <name>hadoop.proxyuser.hue.hosts</name>
         <value>*</value>
@@ -53,5 +53,12 @@
     <property>
         <name>hadoop.proxyuser.hue.groups</name>
         <value>*</value>
+    </property>
+    <property>
+      <name>fs.trash.interval</name>
+      <value>10080</value>
+      <description>Number of minutes between trash checkpoints.
+      If zero, the trash feature is disabled.
+      </description>
     </property>
 </configuration>
