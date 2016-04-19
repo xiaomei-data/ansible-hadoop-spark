@@ -5,6 +5,9 @@
   - name: stop the hdfs namenode
     action: command {{ service_dir }}/hadoop-{{ hadoop_version }}/sbin/hadoop-daemon.sh --script hdfs stop namenode
 
+  - name: start the hdfs namenode
+    action: command {{ service_dir }}/hadoop-{{ hadoop_version }}/sbin/hadoop-daemon.sh stop secondarynamenode
+
 - hosts: slave
   remote_user: "{{ remote_user }}"
 

@@ -10,9 +10,22 @@
 
   - name: generate regionservers for hbase
     template: src=templates/regionservers dest={{ service_dir }}/hbase-{{ hbase_version }}/conf/regionservers owner={{ remote_user }} mode=0644
-    
+
   - name: generate the symbol link of hdfs-site.xml to hbase conf
     file: src={{ service_dir }}/hadoop-{{ hadoop_version }}/etc/hadoop/hdfs-site.xml dest={{ service_dir }}/hbase-{{ hbase_version }}/conf/hdfs-site.xml owner={{ remote_user }} state=link
 
   - name: generate the symbol link of core-site.xml to hbase conf
     file: src={{ service_dir }}/hadoop-{{ hadoop_version }}/etc/hadoop/core-site.xml dest={{ service_dir }}/hbase-{{ hbase_version }}/conf/core-site.xml owner={{ remote_user }} state=link
+
+  - name: unzip the phoienx to service directory
+    action: unarchive src={{ source_dir }}/phoenix-{{ phoenix_version }}-bin.tar.gz dest={{ service_dir }} copy=no
+
+  - name: copy phoienx client to hbase
+    command:  cp -rf {{ service_dir }}/phoenix-{{ phoenix_version }}-bin/phoenix-{{ phoenix_version }}-client.jar {{ service_dir }}/hbase-{{ hbase_version }}/lib
+
+  - name: copy phoienx server to hbase
+    command:  cp -rf {{ service_dir }}/phoenix-{{ phoenix_version }}-bin/phoenix-{{ phoenix_version }}-server.jar {{ service_dir }}/hbase-{{ hbase_version }}/lib
+
+  - name: copy phoienx core to hbase
+    command:  cp -rf {{ service_dir }}/phoenix-{{ phoenix_version }}-bin/phoenix-core-{{ phoenix_version }}.jar {{ service_dir }}/hbase-{{ hbase_version }}/lib
+
