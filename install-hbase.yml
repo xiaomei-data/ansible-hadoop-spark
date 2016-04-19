@@ -10,3 +10,9 @@
 
   - name: generate regionservers for hbase
     template: src=templates/regionservers dest={{ service_dir }}/hbase-{{ hbase_version }}/conf/regionservers owner={{ remote_user }} mode=0644
+    
+  - name: generate the symbol link of hdfs-site.xml to hbase conf
+    file: src={{ service_dir }}/hadoop-{{ hadoop_version }}/etc/hadoop/hdfs-site.xml dest={{ service_dir }}/hbase-{{ hbase_version }}/conf/hdfs-site.xml owner={{ remote_user }} state=link
+
+  - name: generate the symbol link of core-site.xml to hbase conf
+    file: src={{ service_dir }}/hadoop-{{ hadoop_version }}/etc/hadoop/core-site.xml dest={{ service_dir }}/hbase-{{ hbase_version }}/conf/core-site.xml owner={{ remote_user }} state=link
